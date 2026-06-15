@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="simple-auth-body">
+  <main class="simple-auth-shell">
+    <section class="simple-auth-card">
+      <h1 class="simple-auth-title">Welcome</h1>
+      <p id="profileStatus" class="simple-auth-text">Aap ki profile verify ki ja rahi hai...</p>
+
+      <div id="messageBox" class="message-box hidden" aria-live="polite"></div>
+
+      <div id="profileCard" class="profile-card hidden">
+        <p><span>Name</span><strong id="profileName">-</strong></p>
+        <p><span>Email</span><strong id="profileEmail">-</strong></p>
+        <p><span>User ID</span><strong id="profileId">-</strong></p>
+      </div>
+
+      <div class="simple-dashboard-actions">
+        <button id="logoutBtn" class="primary-btn" type="button">Logout</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="simple-auth-body">
+  <main class="simple-auth-shell">
+    <section class="simple-auth-card">
+      <h1 class="simple-auth-title">Signup</h1>
+      <p class="simple-auth-text">Naya account banane ke liye details fill karein.</p>
+
+      <div id="messageBox" class="message-box hidden" aria-live="polite"></div>
+
+      <form id="signupForm" class="auth-form">
+        <label>
+          Full name
+          <input id="name" type="text" name="name" placeholder="Enter your name" required>
+        </label>
+        <label>
+          Email
+          <input id="email" type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Password
+          <input id="password" type="password" name="password" placeholder="Create password" required>
+        </label>
+        <button class="primary-btn" type="submit">Create account</button>
+      </form>
+
+      <div class="simple-auth-links">
+        <a href="/login.html">Already have an account? Login</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/signup.js"></script>
+</body>
+</html>

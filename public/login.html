@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="simple-auth-body">
+    <main class="simple-auth-shell">
+      <section class="simple-auth-card">
+        <h1 class="simple-auth-title">Login</h1>
+        <p class="simple-auth-text">Apna email aur password enter karein.</p>
+
+        <div
+          id="messageBox"
+          class="message-box hidden"
+          aria-live="polite"
+        ></div>
+
+        <form id="loginForm" class="auth-form">
+          <label>
+            Email
+            <input
+              id="loginEmail"
+              type="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </label>
+          <label>
+            Password
+            <input
+              id="loginPassword"
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              required
+            />
+          </label>
+          <button class="primary-btn" type="submit">Login</button>
+        </form>
+
+        <div class="simple-auth-links">
+          <a href="/signup.html">Create account</a>
+          <a href="/forgot-password.html">Forgot password?</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="/js/login.js"></script>
+  </body>
+</html>
