@@ -1,25 +1,33 @@
-require('dotenv').config();
 
-const express = require ("express");
+require("dotenv").config();
+
+const express = require("express");
 const path = require("path");
+const cors = require("cors");
+
+const ConnectDb = require("./config/db");
+const userRoute = require("./routes/userRoute");
 
 const app = express();
+
+app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public"))); 
+app.use(express.static(path.join(__dirname, "public")));
 
-const ConnectDb = require('./config/db')
+app.use("/api", userRoute);
 
-const userRoute = require('./routes/userRoute')
-app.use('/api',userRoute);
-
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-  });
-ConnectDb();
-
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`server is running at http://localhost:${PORT}`);
-});
+
+async function startServer() {
+  await ConnectDb();
+
+  app.listen(PORT, "0.0.0.0", () => {
+    console.log(`server is running on port ${PORT}`);
+  });
+}
+
+startServer();

@@ -1,13 +1,19 @@
 const mongoose = require("mongoose")
 
+const dns = require("dns");
+
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
+
 async function ConnectDb() {
     try {
 
-        await mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/auth-project")
+        await mongoose.connect(process.env.MONGODB_URI)
         console.log("database connected")
 
     } catch (error) {
-        console.log("database is not connected")
+        console.log("Database Not Connected")
+        console.log("Error message:", error.message);
+
     }
 }
 
