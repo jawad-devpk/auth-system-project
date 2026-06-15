@@ -6,6 +6,7 @@ dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 async function ConnectDb() {
     try {
+        console.log("MONGODB_URI exists:", !!process.env.MONGODB_URI);
 
         await mongoose.connect(process.env.MONGODB_URI)
         console.log("database connected")
